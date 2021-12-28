@@ -4,7 +4,10 @@ import {
     LIST_PRODUCT_FAIL,
     SINGLE_PRODUCT_REQUEST,
     SINGLE_PRODUCT_SUCCESS,
-    SINGLE_PRODUCT_FAIL
+    SINGLE_PRODUCT_FAIL,
+    BID_PRODUCT_REQUEST,
+    BID_PRODUCT_SUCCESS,
+    BID_PRODUCT_FAIL
     } from "../actions/type";
 
     export const getProductReducer = (
@@ -32,7 +35,7 @@ import {
         }
       };
 
-      export const singleProductReducer = (
+    export const singleProductReducer = (
         state = {
           loading: false,
           error: null,
@@ -50,6 +53,31 @@ import {
               ...state,
               loading: false,
               errors: action.payload,
+            };
+      
+          default:
+            return state;
+        }
+      };
+
+      export const bidProductReducer = (
+        state = {
+          loadingbid: false,
+          errorbid: null,
+          bid: {},
+        },
+        action
+      ) => {
+        switch (action.type) {
+          case BID_PRODUCT_REQUEST:
+            return { ...state, loadingbid: true };
+          case BID_PRODUCT_SUCCESS:
+            return { ...state, loadingbid: false, bid: action.payload };
+          case BID_PRODUCT_FAIL:
+            return {
+              ...state,
+              loadingbid: false,
+              errorbid: action.payload,
             };
       
           default:
