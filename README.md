@@ -6,6 +6,25 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+## Features
+
+
+- Product listings
+- Bid on product
+- Auto Bid on product
+- Top products carousel
+
+```
+Sample User Logins
+
+user1 (Customer)
+user1
+
+user2 (Customer)
+user2
+```
+
+
 ### `npm start`
 
 Runs the app in the development mode.\
